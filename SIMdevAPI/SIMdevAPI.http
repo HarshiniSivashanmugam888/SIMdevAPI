@@ -1,0 +1,6 @@
+@SIMdevAPI_HostAddress = http://localhost:5051
+
+GET {{SIMdevAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
