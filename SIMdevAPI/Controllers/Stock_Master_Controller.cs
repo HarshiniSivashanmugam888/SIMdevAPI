@@ -32,8 +32,7 @@ namespace SIMdevAPI.Controllers
                 Qty = stock.Qty,
                 Price = stock.Price,
                 Box_Unit = stock.Box_Unit,
-                Buyer_Name = stock.Buyer_Name,
-                Comp_Mast_Id = stock.Comp_Mast_Id
+                Buyer_Name = stock.Buyer_Name               
             };
             await dbcontext.stock_master.AddAsync(stock_mast);
             await dbcontext.SaveChangesAsync();
@@ -48,7 +47,6 @@ namespace SIMdevAPI.Controllers
             if(findId!= null)
             {
                 findId.Comp_Details_Id = stock.Comp_Details_Id;
-                findId.Comp_Mast_Id = stock.Comp_Mast_Id;
                 findId.Date = stock.Date;
                 findId.Qty = stock.Qty;
                 findId.Price = stock.Price;

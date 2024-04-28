@@ -18,6 +18,7 @@ namespace SIMdevAPI.Data
         public DbSet<Staff_Production_In_Entry> staff_prod_in_entry { get; set; }
         public DbSet<Spares_Out_For_Production> spares_out_for_production { get; set; }
         public DbSet<Stock_Master> stock_master { get; set; }
+        public DbSet<Login_Master> login_master { get; set; }
 
     }
 }

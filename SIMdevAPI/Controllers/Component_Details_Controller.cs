@@ -43,16 +43,12 @@ namespace SIMdevAPI.Controllers
         [Route("{id}")]
         public async Task<IActionResult> UpdateComponentDetails([FromRoute] long id, Component_Details_DTO component)
         {
-            var FindId = dbcontext.comp_details.FindAsync(id);
+            var FindId = await dbcontext.comp_details.FindAsync(id);
             if (FindId != null)
             {
-                var comp_details = new Component_Details()
-                {
-                    Comp_Mast_Id = component.Comp_Mast_Id,
-                    Comp_Details_Name = component.Comp_Details_Name,
-                    Unit = component.Unit,
-                    Value = component.Value
-                };
+                FindId.Comp_Details_Name = component.Comp_Details_Name;
+                FindId.Unit = component.Unit;
+                FindId.Value = component.Value;
                 await dbcontext.SaveChangesAsync();
                 return Ok(component);
             }
